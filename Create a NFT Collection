@@ -1,0 +1,63 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// Create a variable to hold your NFTs
+const nft = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(district_name, image, travel_places, district_food, description) {
+    const NFT = {
+        "district_name": district_name,
+        "image": image,
+        "travel_places": travel_places,
+        "district_food": district_food,
+        "description": description
+    };
+    nft.push(NFT);
+    console.log("Minting", district_name);
+}
+
+// Create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    for (let i = 0; i < nft.length; i++) {
+        console.log("**********************************")
+        console.log("*   My Loving Himachal pardesh   *");
+        console.log("**********************************");
+        console.log("District Name:\t" + nft[i].district_name);
+        console.log("Image:\t" + nft[i].image);
+        console.log("Travel Places:\t" + nft[i].travel_places);
+        console.log("District Food:\t" + nft[i].district_food);
+        console.log("Description:\t" + nft[i].description);
+        console.log("*********************************");
+    }
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    return nft.length;
+}
+
+// Call your functions below this line
+
+// Minting some NFTs
+mintNFT("Shimla", "shimla.png", "Mall Road, Jakhu Temple, Kufri", "Chana Madra, Dham, Siddu", "Shimla, the capital city, nestled in the lap of the Himalayas, known for its colonial architecture, scenic beauty, and delicious Himachali cuisine.");
+mintNFT("Kullu", "kullu.png", "Manikaran, Great Himalayan National Park, Bijli Mahadev", "Dham, Trout Fish, Bhey", "Kullu, known as the Valley of Gods, famous for its picturesque landscapes, adventure sports, and mouthwatering local delicacies.");
+mintNFT("Mandi", "mandi.png", "Rewalsar Lake, Prashar Lake, Barot Valley", "Siddu, Babru, Chha Gosht", "Mandi, the cultural capital, located on the banks of the Beas River, renowned for its temples, lakes, and delectable Himachali cuisine.");
+mintNFT("Kinnaur", "kinnaur.png", "Kalpa, Sangla Valley, Chitkul", "Thukpa, Siddu, Dham", "Kinnaur, the land of gods and goddesses, blessed with pristine beauty, apple orchards, and a rich cultural heritage, offering a delightful culinary experience.");
+mintNFT("Chamba", "chamba.png", "Khajjiar, Chamera Lake, Bhuri Singh Museum", "Chamba Madra, Chukh, Tudkiya Bhat", "Chamba, the valley of milk and honey, renowned for its ancient temples, lush greenery, and lip-smacking traditional cuisine.");
+
+// Listing all NFTs to see their details
+listNFTs();
+
+// Printing the total number of NFTs created
+console.log("Total Supply: " + getTotalSupply());
